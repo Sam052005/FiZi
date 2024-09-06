@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+    <!--=============== BOXICON ===============-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="/static/css/stylesCamera.css">
+
+    <title>FitnessFuelX Camera</title>
+</head>
+<body>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">
+                <img src="assets/img/favicon.png" alt="logo"> FitnessFuelX
+            </a>
+        </nav>
+    </header>
+
+    <!--==================== MAIN ====================-->
+    <main class="main" id="main-content">
+        <section class="camera section" id="camera">
+            <div class="camera__container container grid">
+                <div class="camera__data">
+                    <h1 class="camera__title">Camera Access</h1>
+                    <p class="camera__description">
+                        Use the button below to start your camera and see the feed.
+                    </p>
+                    <button id="start-camera" class="button button__flex">
+                        Start Camera <i class="ri-camera-line"></i>
+                    </button>
+                    <img id="video" class="camera__video" alt="Video Feed" />
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--=============== MAIN JS ===============-->
+    <script>
+        const startCameraButton = document.getElementById('start-camera');
+        const video = document.getElementById('video');
+
+        startCameraButton.addEventListener('click', () => {
+            video.src = "/video_feed";  // Stream video from Flask
+        });
+    </script>
+</body>
+</html>
