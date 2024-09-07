@@ -1,0 +1,170 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #000000, #790505);
+    background-size: 200% 200%;
+    animation: gradientShift 20s ease infinite;
+    overflow: hidden;
+    flex-direction: column;
+}
+header {
+    background-color: rgba(18, 17, 17, 0.6);
+    color: #fff8f8;
+    padding: 20px;
+    text-align: center;
+    animation: pulse 2s infinite;
+}
+.container {
+    display: flex;
+    width: 100%;
+    height: calc(100% - 60px);
+}
+.left-section, .right-section {
+    width: 50%;
+    height: 100%;
+    overflow: auto;
+}
+.left-section {
+    padding: 20px;
+    box-sizing: border-box;
+    animation: fadeIn 2s ease-out;
+    color: #fff;
+}
+.right-section {
+    padding: 20px;
+    box-sizing: border-box;
+    animation: slideIn 1s ease-out;
+    position: relative;
+    color: #fff;
+}
+#video-container {
+    position: relative;
+    margin-bottom: 20px;
+    z-index: 10;
+}
+#webcam {
+    border: 3px solid #151414;
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+    display: none;
+}
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.5;
+    animation: float 10s infinite ease-in-out;
+}
+.circle:nth-child(1) {
+    width: 300px;
+    height: 300px;
+    background-color: #ff0000;
+    left: -150px;
+    top: -150px;
+    animation: rotate 10s linear infinite;
+}
+.circle:nth-child(2) {
+    width: 200px;
+    height: 200px;
+    background-color: #000000;
+    right: -100px;
+    top: 50%;
+    animation-delay: -5s;
+    animation: pulse 3s infinite;
+}
+.circle:nth-child(3) {
+    width: 250px;
+    height: 250px;
+    background-color: #ff0000;
+    left: 50%;
+    bottom: -125px;
+    animation-delay: -10s;
+    animation: float 20s infinite ease-in-out;
+}
+.line {
+    position: absolute;
+    width: 200%;
+    height: 2px;
+    background: rgba(253, 0, 80, 0.462);
+    animation: heartbeatAnimation 3s linear infinite;
+}
+.line:nth-child(1) { top: 20%; animation-delay: 0s; }
+.line:nth-child(2) { top: 40%; animation-delay: 0.5s; }
+.line:nth-child(3) { top: 60%; animation-delay: 1s; }
+.line:nth-child(4) { top: 80%; animation-delay: 1.5s; }
+.camera-container {
+    padding: 0px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    color: #fff;
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
+}
+.controls button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+.controls button:hover {
+    background-color: #ff0000;
+}
+.mic-button {
+    background: #000000;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 16px;
+}
+.mic-button:hover {
+    background-color: #ff0000;
+}
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-100px) rotate(180deg); }
+}
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+@keyframes gradientShift {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+@keyframes heartbeatAnimation {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
