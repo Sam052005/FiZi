@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Travel Destinations Slider</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="css/styleslider.css">
+    <link rel="stylesheet" href="static/styleslider.css">
 </head>
 <body>
     <div class="nav_w3ls">
@@ -39,30 +39,29 @@
             <div class="item" style="background-image: url(https://crazyathlete.com/wp-content/uploads/2022/05/Biceps-workout-3-744x448.jpg);">
                 <div class="content">
                     <div class="name">Bicep Curl</div>
-                    <div class="des">
-                        Bicep curls strengthen the arm by flexing the elbow through repetitive resistance movements.</div>
-                    <button>Start</button>
+                    <div class="des">Bicep curls strengthen the arm by flexing the elbow through repetitive resistance movements.</div>
+                    <button onclick="location.href='/print_hi'">Start</button>
                 </div>
             </div>
             <div class="item" style="background-image: url(https://ignorelimits.com/wp-content/uploads/2020/02/dumbbell-bicep-workout-1024x683.jpg);">
                 <div class="content">
                     <div class="name">Double Bicep</div>
                     <div class="des">Double bicep curls enhance arm strength by engaging both biceps simultaneously through resistance and flexion.</div>
-                    <button>Start</button>
+                    <button onclick="location.href='/Double_bicep'">Start</button>
                 </div>
             </div>
             <div class="item" style="background-image: url(https://global-uploads.webflow.com/5fe33d036237252135e3e74d/625b8dd03c7c821e6be92daa_jumping%20jacks%20exercises%20by%20cult.fit.jpg);">
                 <div class="content">
                     <div class="name">Jumping Jacks</div>
                     <div class="des">Jumping jacks are a full-body exercise that improves cardiovascular fitness through dynamic jumping and arm-leg coordination.</div>
-                    <button>Start</button>
+                    <button onclick="location.href='/Jumping_Jacks  '">Start</button>
                 </div>
             </div>
             <div class="item" style="background-image: url(https://cdn7.dissolve.com/p/D943_267_329/D943_267_329_1200.jpg);">
                 <div class="content">
                     <div class="name">Pushup</div>
                     <div class="des">Pushups are a bodyweight exercise that strengthens the chest, shoulders, and triceps by lowering and lifting the body in a plank position.</div>
-                    <button>Start</button>
+                    <button onclick="location.href='/Pushup'">Start</button>
                 </div>
             </div>
             <div class="item" style="background-image: url(https://wallpaperaccess.com/full/4692582.jpg);">
@@ -162,7 +161,7 @@
             </div> 
             <div class="item" style="background-image: url(https://wholebodymelbourne.com/wp-content/uploads/2022/09/Screen-Shot-2022-09-12-at-12.56.46-pm-768x525.jpg);">
                 <div class="content">
-                    <div class="name">Knee Plank</div>
+                    <div class="name">Cross Knee Plank</div>
                     <div class="des">
                         The knee plank is a modified plank where you hold the position on your knees instead of toes, reducing intensity.
                     </div>
@@ -259,6 +258,21 @@
         </div>
     </div>
 
-    <script src="slider.js"></script>
+    <script>
+        let next = document.querySelector('.next');
+        let prev = document.querySelector('.prev');
+
+        next.addEventListener('click', function() {
+            let items = document.querySelectorAll('.item');
+            let slide = document.querySelector('.slide');
+            slide.appendChild(items[0]); // Move the first item to the end
+        });
+
+        prev.addEventListener('click', function() {
+            let items = document.querySelectorAll('.item');
+            let slide = document.querySelector('.slide');
+            slide.prepend(items[items.length - 1]); // Move the last item to the start
+        });
+    </script>
 </body>
 </html>  
