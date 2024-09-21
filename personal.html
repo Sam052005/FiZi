@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Additional Details</title>
+    <link rel="stylesheet" href="personal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Additional Details</h1>
+
+        <div class="card">
+            <div class="card-content">
+                <div class="card-overlay">
+                    <h2>Input</h2>
+                    <form id="healthForm">
+                        <div class="form-group">
+                            <img src="waist.gif" alt="Weight">
+                            <label for="weight">Weight (kg)</label>
+                            <input type="number" id="weight" required>
+                        </div>
+                        <div class="form-group">
+                            <img src="waist.gif" alt="Height">
+                            <label for="height">Height (cm)</label>
+                            <input type="number" id="height" required>
+                        </div>
+                        <div class="form-group">
+                            <img src="waist.gif" alt="Age">
+                            <label for="age">Age</label>
+                            <input type="number" id="age" required>
+                        </div>
+                        <div class="form-group">
+                            <img src="waist.gif" alt="Neck">
+                            <label for="neck">Neck (cm)</label>
+                            <input type="number" id="neck" required>
+                        </div>
+                        <div class="form-group">
+                            <img src="waist.gif" alt="Waist">
+                            <label for="waist">Waist (cm)</label>
+                            <input type="number" id="waist" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Gender</label>
+                            <div class="radio-group">
+                                <label>
+                                    <input type="radio" name="gender" value="male" checked> Male
+                                </label>
+                                <label>
+                                    <input type="radio" name="gender" value="female"> Female
+                                </label>
+                            </div>
+                        </div>
+                        <button type="submit" class="submit-btn">Calculate Results</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="resultsPopup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <h2>Your Health Results</h2>
+            <div class="results-container">
+                <div class="result-item">
+                    <i class="fas fa-weight icon"></i>
+                    <h3>BMI (Body Mass Index)</h3>
+                    <p id="bmiResult" class="result-value"></p>
+                </div>
+                <div class="result-item">
+                    <i class="fas fa-heartbeat icon"></i>
+                    <h3>BMR (Basal Metabolic Rate)</h3>
+                    <p id="bmrResult" class="result-value"></p>
+                </div>
+                <div class="result-item">
+                    <i class="fas fa-percentage icon"></i>
+                    <h3>Body Fat Percentage</h3>
+                    <p id="bodyFatResult" class="result-value"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include JavaScript file with type="module" -->
+    <script type="module" src="personal.js"></script>
+</body>
+
+</html>
